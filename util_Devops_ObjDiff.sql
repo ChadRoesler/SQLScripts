@@ -66,14 +66,11 @@ BEGIN
 		DECLARE	@StuffStart INT
 		DECLARE	@StuffLength INT
 		DECLARE	@SDFolderExec VARCHAR(MAX)
-		DECLARE	@MajorVersion VARCHAR(MAX)
 		DECLARE	@TypeOutputLocation VARCHAR(MAX)
 		DECLARE	@Row INT = 1
 		DECLARE	@Count INT
 		DECLARE	@ObjType VARCHAR(10)
 
-		SELECT	@MajorVersion = LEFT(REPLACE(REPLACE(REPLACE(cs.Version,'v',''),'.',''),':',''),3)
-		FROM	ConfigSystem cs
 		
 		SELECT	@ClientName = ISNULL(@ClientName,DB_NAME())
 
@@ -126,11 +123,11 @@ BEGIN
 
 		IF (SUBSTRING(REVERSE(@OutputLocation),1,1) <> '\')
 			BEGIN
-				SELECT	@OutputLocation = @OutputLocation + '\' + @ClientName + '_ObjDiff' + @MajorVersion + '\'
+				SELECT	@OutputLocation = @OutputLocation + '\' + @ClientName + '_ObjDiff' + '\'
 			END
 		ELSE
 			BEGIN
-				SELECT	@OutputLocation = @OutputLocation + @ClientName + '_ObjDiff' + @MajorVersion + '\'
+				SELECT	@OutputLocation = @OutputLocation + @ClientName + '_ObjDiff' + '\'
 			END
 
 		SELECT	@SDFolderExec = 'master.dbo.xp_cmdshell ''MD "' + @OutputLocation + '"'''
