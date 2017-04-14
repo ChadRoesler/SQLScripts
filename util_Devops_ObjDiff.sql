@@ -355,11 +355,6 @@ BEGIN
 				AND o.name <> 'util_Devops_ObjDiff'
 				AND o.name <> 'util_Devops_FindCustomizations'
 				AND o.name <> 'util_ObjOut'
-				AND o.name NOT LIKE 'aq[_]%'
-				AND o.name NOT LIKE 'rpt[_]%'
-				AND o.name NOT LIKE 'web[_]rpt[_]%'
-				AND o.name NOT LIKE 'upg[_]%'
-				AND o.name NOT LIKE 'Avionte[_]wp[_]%'
 		ORDER BY o.type,
 				 o.name ASC
 
