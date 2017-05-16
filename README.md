@@ -12,6 +12,8 @@ Util_dropper: Drop all temp tables associated to a SPID.
 
 Util_Dynamomatic: Generates Dynamic SQL for you.
 
+Util_ObjOut: Outputs an object to the defined location.
+
 Util_TriggerMan: Generates a trigger that can self destruct, for auditing a table.
 
 Util_WHOUSESSPRENAME_SERIOUSLY: Sometimes people use SP_Rename, find out what procedures have been impacted by this, and correct it.
